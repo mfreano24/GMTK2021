@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5691168594984922318}
   - component: {fileID: 5691168594984922319}
   - component: {fileID: 5691168594984922316}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   verticalSpeed: 0
+  player2: 0
 --- !u!61 &5691168594984922316
 BoxCollider2D:
   m_ObjectHideFlags: 0

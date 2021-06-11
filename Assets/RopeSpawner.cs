@@ -15,6 +15,7 @@ public class RopeSpawner : MonoBehaviour
     void Start()
     {
         //ropeParent = Instantiate(new GameObject());
+        Physics.IgnoreLayerCollision(0, 8);
         GameObject pastLink = new GameObject();
         Vector3 distanceBetweenSpawnPoints = pointB.position - pointA.position;
         for (int i = 0; i < jointCount; i++) 
