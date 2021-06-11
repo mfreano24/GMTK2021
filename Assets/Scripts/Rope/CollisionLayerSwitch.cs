@@ -5,16 +5,16 @@ using UnityEngine;
 public class CollisionLayerSwitch : MonoBehaviour
 {
     [Header("Layers")]
-    public LayerMask ropeLayer;
-    public LayerMask ropeColliderSetA;
-    public LayerMask ropeColliderSetB;
+    public int ropeLayer = 8;
+    public int ropeColliderSetA = 9;
+    public int ropeColliderSetB = 10;
     public bool ignoreSetAFirst;
 
     bool isOnLayerA = false;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             isOnLayerA = true;
         }
