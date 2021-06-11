@@ -15,15 +15,15 @@ public class RopeSpawner : MonoBehaviour
     void Start()
     {
         //ropeParent = Instantiate(new GameObject());
-        Physics.IgnoreLayerCollision(0, 8);
-        GameObject pastLink = new GameObject();
+        Physics2D.IgnoreLayerCollision(8, 11);
+        GameObject pastLink = null;
         Vector3 distanceBetweenSpawnPoints = pointB.position - pointA.position;
         for (int i = 0; i < jointCount; i++) 
         {
             GameObject newLink = Instantiate(ropeLink, ropeParent.transform);
 
 
-            newLink.transform.position = (pointA.position + (distanceBetweenSpawnPoints / jointCount) * i);//(Vector3.left * i * spacer) + (Vector3.right * (jointCount/2) * spacer);
+            newLink.transform.position = (pointA.position + (distanceBetweenSpawnPoints / jointCount) * i); 
             if (i == 0)
             {
                 newLink.GetComponent<HingeJoint2D>().connectedBody = pointA.GetComponent<Rigidbody2D>();
@@ -37,9 +37,8 @@ public class RopeSpawner : MonoBehaviour
             pastLink = newLink;
         }
       
-        ropeParent.transform.GetChild(ropeParent.transform.childCount - 1).GetComponent<HingeJoint2D>().connectedBody = pointB.GetComponent<Rigidbody2D>();
-        ropeParent.transform.GetChild(ropeParent.transform.childCount - 1).GetComponent<DistanceJoint2D>().connectedBody = pointB.GetComponent<Rigidbody2D>();
-        Debug.Break();
+        pastLink.GetComponent<HingeJoint2D>().connectedBody = pointB.GetComponent<Rigidbody2D>();
+        pastLink.GetComponent<DistanceJoint2D>().connectedBody = pointB.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
