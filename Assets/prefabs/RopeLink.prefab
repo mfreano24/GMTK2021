@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 1628204328362497711}
   - component: {fileID: 1628204328362497705}
   - component: {fileID: 1628204328362497704}
+  - component: {fileID: -5453254832553046458}
   - component: {fileID: 8284447644071285256}
+  - component: {fileID: -5702688627945387259}
   m_Layer: 8
   m_Name: RopeLink
   m_TagString: Untagged
@@ -99,7 +101,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.25
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -154,8 +156,32 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 45
-    m_UpperAngle: -45
+    m_LowerAngle: 0
+    m_UpperAngle: 360
+--- !u!233 &-5453254832553046458
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628204328362497706}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -1.11, y: 1.0076661}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 360
 --- !u!232 &8284447644071285256
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -172,6 +198,20 @@ DistanceJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 1
-  m_MaxDistanceOnly: 1
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.005
+  m_MaxDistanceOnly: 0
+--- !u!114 &-5702688627945387259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628204328362497706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c806702d1aae24796416600525ccdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hingeOne: {fileID: 1628204328362497704}
+  hingeTwo: {fileID: -5453254832553046458}

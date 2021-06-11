@@ -26,19 +26,20 @@ public class RopeSpawner : MonoBehaviour
             newLink.transform.position = (pointA.position + (distanceBetweenSpawnPoints / jointCount) * i); 
             if (i == 0)
             {
-                newLink.GetComponent<HingeJoint2D>().connectedBody = pointA.GetComponent<Rigidbody2D>();
+                newLink.GetComponent<RopeParts>().SetHingeJointOneBody(pointA.GetComponent<Rigidbody2D>()); 
                 newLink.GetComponent<DistanceJoint2D>().connectedBody = pointA.GetComponent<Rigidbody2D>();
             }
             else
             {
-                newLink.GetComponent<HingeJoint2D>().connectedBody = pastLink.GetComponent<Rigidbody2D>();
+                newLink.GetComponent<RopeParts>().SetHingeJointOneBody(pastLink.GetComponent<Rigidbody2D>());
+                pastLink.GetComponent<RopeParts>().SetHingeJointTwoBody(newLink.GetComponent<Rigidbody2D>());
                 newLink.GetComponent<DistanceJoint2D>().connectedBody = pastLink.GetComponent<Rigidbody2D>();
             }
             pastLink = newLink;
         }
-      
-        pastLink.GetComponent<HingeJoint2D>().connectedBody = pointB.GetComponent<Rigidbody2D>();
-        pastLink.GetComponent<DistanceJoint2D>().connectedBody = pointB.GetComponent<Rigidbody2D>();
+
+        ropeParent.transform.GetChild(ropeParent.transform.childCount - 1).GetComponent<RopeParts>().SetHingeJointTwoBody(pointB.GetComponent<Rigidbody2D>());
+        ropeParent.transform.GetChild(ropeParent.transform.childCount - 1).GetComponent<DistanceJoint2D>().connectedBody = pointB.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame

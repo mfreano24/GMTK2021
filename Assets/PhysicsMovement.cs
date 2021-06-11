@@ -6,7 +6,6 @@ public class PhysicsMovement : MonoBehaviour
 {
 
     public float speed;
-    public float verticalSpeed;
     Vector2 input;
     public bool player2;
     // Start is called before the first frame update
@@ -35,6 +34,6 @@ public class PhysicsMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        gameObject.GetComponent<Rigidbody2D>().velocity = input;
+        gameObject.GetComponent<Rigidbody2D>().MovePosition(((Vector2)transform.position) + input);
     }
 }
