@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -661,6 +661,7 @@ GameObject:
   - component: {fileID: 79699443}
   - component: {fileID: 79699444}
   - component: {fileID: 79699445}
+  - component: {fileID: 79699446}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -700,7 +701,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8153994c6d6a15f43bcf1cca6a29d422, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -764,6 +765,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 990581278}
+--- !u!114 &79699446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79699441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e088c01117fab42a6d97f1b3062ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &96155670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,6 +1361,7 @@ GameObject:
   - component: {fileID: 411402317}
   - component: {fileID: 411402318}
   - component: {fileID: 411402319}
+  - component: {fileID: 411402320}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -1419,7 +1433,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8153994c6d6a15f43bcf1cca6a29d422, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1451,6 +1465,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &411402320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411402315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e088c01117fab42a6d97f1b3062ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &417129616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,6 +2744,7 @@ MonoBehaviour:
   - {fileID: 2109669522}
   - {fileID: 70770143}
   thisAnimator: {fileID: 79699445}
+  specialAnimations: {fileID: 79699446}
 --- !u!1001 &1054859138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14350,6 +14377,7 @@ MonoBehaviour:
   - {fileID: 623218088}
   - {fileID: 1392229756}
   thisAnimator: {fileID: 411402317}
+  specialAnimations: {fileID: 411402320}
 --- !u!1 &1989667425 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8237760751294442155, guid: fdb2bf05b41d7a04182d5c559ecac02c,

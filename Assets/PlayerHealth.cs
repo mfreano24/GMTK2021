@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public GameObject[] hearts;
     public PlayerAnimation thisAnimator;
-
+    public SpecialAnimations specialAnimations;
     PlayerMovement thisMovement;
     int healthRemaining = 3;
 
@@ -60,6 +60,7 @@ public class PlayerHealth : MonoBehaviour
     public void TempInvincibility(float time)
     {
         StartCoroutine(Invincibility(time));
+        specialAnimations.CallDamageFlash(time, 2.2f, 4f);
     }
 
     IEnumerator Invincibility(float time)

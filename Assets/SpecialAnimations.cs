@@ -19,16 +19,14 @@ public class SpecialAnimations : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CallDamageFlash(float length, float fadeIntensity, float fadeSpeed)
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            StartCoroutine(DamageFlash(3f, 4f, 4f));
-            Debug.Log("flash");
-        }
-    }
 
+        StopCoroutine(DamageFlash(1f,1f,1f));
+        StartCoroutine(DamageFlash(length, fadeIntensity, fadeSpeed));
+
+
+    }
 
     public IEnumerator DamageFlash(float length, float fadeIntensity, float fadeSpeed)
     {
