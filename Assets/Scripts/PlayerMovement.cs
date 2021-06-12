@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Health/Stamina")]
     public float staminaDrainRate = 20.0f;
-    public Text staminaValueText;
+    public Image staminaMeter;
 
 
     Vector2 moveDirection;
@@ -59,13 +59,10 @@ public class PlayerMovement : MonoBehaviour
 
             if (stamina <= 0.0f)
             {
-                staminaValueText.text = "0";
                 Detach();
             }
         }
-
-
-        staminaValueText.text = Mathf.FloorToInt(stamina).ToString();
+        staminaMeter.fillAmount = stamina / 100.0f;
 
     }
 
@@ -80,8 +77,6 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-
-
                 moveDirection = Vector2.right * xInput + Vector2.up * yInput;
                 rb.velocity = speed * moveDirection;
 
