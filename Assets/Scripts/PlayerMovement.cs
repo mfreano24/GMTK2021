@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (stamina <= 0.0f)
             {
-
+                staminaValueText.text = "0";
                 Detach();
             }
         }
