@@ -29,10 +29,12 @@ public class PlayerMovement : MonoBehaviour
     //stuff to be accessed by other scripts.
     [HideInInspector] public bool isAttached; //is the player attached to the wall?
 
+    ValidClimbSpotFinder validClimbSpotFinder;
 
 
     private void Start()
     {
+        validClimbSpotFinder = GetComponent<ValidClimbSpotFinder>();
         rb = GetComponent<Rigidbody2D>();
         isAttached = true;
         rb.gravityScale = 0.0f;
@@ -61,20 +63,35 @@ public class PlayerMovement : MonoBehaviour
                 Detach();
             }
         }
-        
+
 
         staminaValueText.text = Mathf.FloorToInt(stamina).ToString();
-        
+
     }
 
     private void FixedUpdate()
     {
         if (isAttached)
         {
-            //Debug.Log("whuh");
-            moveDirection = Vector2.right * xInput + Vector2.up * yInput;
 
-            rb.velocity = speed * moveDirection;
+            if (!validClimbSpotFinder.CheckPlayerPosition())
+            {
+                Detach();
+            }
+            else
+            {
+
+
+                moveDirection = Vector2.right * xInput + Vector2.up * yInput;
+                rb.velocity = speed * moveDirection;
+
+
+                if (!validClimbSpotFinder.CheckPlayerPosition(rb.velocity * Time.fixedDeltaTime))
+                {
+                    rb.velocity = rb.velocity * Vector2.up;
+                }
+            }
+
         }
     }
 
