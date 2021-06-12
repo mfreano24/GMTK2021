@@ -7,7 +7,7 @@ public class ValidClimbSpotFinder : MonoBehaviour
     LayerMask climbingLayers = 0b1000000000000;
     BoxCollider2D playerCollider;
 
-    public void Start()
+    public void Awake()
     {
         playerCollider = gameObject.GetComponent<BoxCollider2D>();
     }

@@ -16,7 +16,7 @@ public class ParallaxScroll : MonoBehaviour
     private Vector2 screenBounds;
     private Vector2 sampleTileBounds;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         mainCamera = Camera.main;
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
