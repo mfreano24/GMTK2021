@@ -8,7 +8,7 @@ public class DeathTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //TODO: Call to GameManager here to handle death
+            //TODO: only trigger this when both players fall
             GameManager.Instance.PlayerDeath();
         }
         else if (collision.CompareTag("Boulder"))
