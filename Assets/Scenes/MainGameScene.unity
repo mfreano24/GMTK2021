@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 112278071}
   - component: {fileID: 112278073}
   - component: {fileID: 112278072}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CliffOne (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 461885127}
   - component: {fileID: 461885129}
   - component: {fileID: 461885128}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: CliffOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   climbingLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1024
   playerCollider: {fileID: 1952651068}
 --- !u!1 &1979887623
 GameObject:

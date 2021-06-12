@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class ValidClimbSpotFinder : MonoBehaviour
 {
-    public LayerMask climbingLayers;
-    public BoxCollider2D playerCollider;
+    LayerMask climbingLayers = 0b1000000000000;
+    BoxCollider2D playerCollider;
 
-    public bool CheckPlayerPosition() 
+    public void Start()
+    {
+        playerCollider = gameObject.GetComponent<BoxCollider2D>();
+    }
+
+    public  bool CheckPlayerPosition() 
     {
         Vector2 boxDimensions = new Vector2(playerCollider.size.x, playerCollider.size.y);
 
