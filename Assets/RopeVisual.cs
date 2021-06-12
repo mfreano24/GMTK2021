@@ -6,18 +6,38 @@ public class RopeVisual : MonoBehaviour
 {
     public Transform playerA;
     public Transform playerB;
+    public Gradient ropeTensionGradient;
     LineRenderer ropeLine;
 
     Vector3 basePos = new Vector3(0,0,1);
+    PlayerMovement playerAScript;
+    PlayerMovement playerBScript;
+
+    float distance;
 
     private void Start()
     {
         ropeLine = GetComponent<LineRenderer>();
+        playerAScript = playerA.GetComponent<PlayerMovement>();
+        playerBScript = playerB.GetComponent<PlayerMovement>();
     }
 
     private void Update()
     {
         ropeLine.SetPosition(0, playerA.position + basePos);
         ropeLine.SetPosition(1, playerB.position + basePos);
+
+        //color the rope (ideally only color the rope to represent "tension" if at least one climber is not attached
+        distance = Vector2.Distance(playerA.position, playerB.position);
+        if(!playerAScript.isAttached || !playerBScript.isAttached)
+        {
+            ropeLine.startColor = ropeTensionGradient.Evaluate(distance / 3.5f);
+            ropeLine.endColor = ropeTensionGradient.Evaluate(distance / 3.5f);
+        }
+        else
+        {
+            ropeLine.startColor = ropeTensionGradient.Evaluate(0.0f);
+            ropeLine.endColor = ropeTensionGradient.Evaluate(0.0f);
+        }
     }
 }

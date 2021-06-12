@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Singleton Implementation
     private static GameManager m_instance;
 
     public static GameManager Instance
@@ -28,4 +29,49 @@ public class GameManager : MonoBehaviour
 
         m_instance = this;
     }
+    #endregion
+
+    bool gameOver = false;
+    private void Start()
+    {
+        //default game logic, not the tutorial level probably
+
+    }
+
+    IEnumerator GameLoop()
+    {
+        //TODO: GameStart(), GameDuring(), GameEnd()
+        yield return null;
+    }
+
+    IEnumerator GameStart()
+    {
+        //ready, go text or something
+        yield return new WaitForSeconds(3.0f);
+    }
+
+    IEnumerator GameDuring()
+    {
+        //primary game loop should be happening here, basically waituntil the player dies
+        yield return new WaitUntil(() => gameOver);
+    }
+
+    IEnumerator GameEnd()
+    {
+        //TODO: you lose screen
+        yield return null;
+    }
+
+
+    public void PlayerDeath()
+    {
+        Debug.Log("You fell (and died)!");
+    }
+
+
+    IEnumerator BoulderSpawns()
+    {
+        yield return null;
+    }
+    
 }

@@ -8,10 +8,13 @@ public class DeathTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //die lol
-            Debug.Log("You fell (and died)!");
+            
             //TODO: Call to GameManager here to handle deth
-            //GameManager.Instance.PlayerDeath();
+            GameManager.Instance.PlayerDeath();
         }
     }
+
+
+
+    
 }

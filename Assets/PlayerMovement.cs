@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Health/Stamina")]
     public float staminaDrainRate = 20.0f;
+    public Text staminaValueText;
+
 
     Vector2 moveDirection;
     Rigidbody2D rb;
@@ -19,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     //health values
     float stamina = 100.0f;
     int health = 5;
+
+    bool isDead = false; //used mostly for effects
+
 
     //stuff to be accessed by other scripts.
     [HideInInspector] public bool isAttached; //is the player attached to the wall?
@@ -37,17 +43,28 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         GetThisPlayerInput();
-        /*
-        if (!otherPlayer.isAttached)
+        if (isAttached)
         {
-            //drain our stamina
-            stamina -= 2.0f * staminaDrainRate;
+            if (!otherPlayer.isAttached && Vector2.Distance(transform.position, otherPlayer.transform.position) >= 3.45f)
+            {
+                //drain our stamina
+                stamina -= staminaDrainRate * Time.deltaTime;
+            }
+            else if (stamina < 100.0f)
+            {
+                stamina += 2.0f * staminaDrainRate * Time.deltaTime;
+            }
+
+            if (stamina <= 0.0f)
+            {
+
+                Detach();
+            }
         }
-        else if(stamina < 100.0f)
-        {
-            stamina += 2.0f * staminaDrainRate * Time.deltaTime;
-        }
-        */
+        
+
+        staminaValueText.text = Mathf.FloorToInt(stamina).ToString();
+        
     }
 
     private void FixedUpdate()
@@ -68,38 +85,48 @@ public class PlayerMovement : MonoBehaviour
             xInput = Input.GetAxis("Horizontal");
             yInput = Input.GetAxis("Vertical");
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.O))
             {
                 if (isAttached)
                 {
-                    isAttached = false;
-                    rb.gravityScale = 1.0f;
+                    Detach();
                 }
                 else
                 {
-                    isAttached = true;
-                    rb.gravityScale = 0.0f;
+                    Reattach();
                 }
             }
         }
         else
         {
+            //alternatively, what if we moved this one with the mouse?
+            //this would prevent getting confused, which i sure am.
             xInput = Input.GetAxis("HorizontalP2");
             yInput = Input.GetAxis("VerticalP2");
 
-            if (Input.GetKeyDown(KeyCode.O))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (isAttached)
                 {
-                    isAttached = false;
-                    rb.gravityScale = 1.0f;
+                    Detach();
                 }
                 else
                 {
-                    isAttached = true;
-                    rb.gravityScale = 0.0f;
+                    Reattach();
                 }
             }
         }
+    }
+
+    private void Detach()
+    {
+        isAttached = false;
+        rb.gravityScale = 1.0f;
+    }
+
+    private void Reattach()
+    {
+        isAttached = true;
+        rb.gravityScale = 0.0f;
     }
 }
