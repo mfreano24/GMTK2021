@@ -31,6 +31,7 @@ public class BoulderManager : MonoBehaviour
     [Header("Boulder Spawns and Prefabs")]
     public Transform[] spawnPoints;
     public GameObject[] boulders;
+    public GameObject[] warningSigns;
 
     //want to store the current point benchmarks so that we can decrease the timers
     [Header("Point Benchmarks")]
@@ -42,7 +43,7 @@ public class BoulderManager : MonoBehaviour
     List<GameObject> freeObjects = new List<GameObject>();
     List<GameObject> inUseObjects = new List<GameObject>();
 
-    int dropIndex;
+    Queue<int> dropIndices;
 
     Coroutine boulderCoroutine;
 
@@ -62,6 +63,12 @@ public class BoulderManager : MonoBehaviour
             e.SetActive(false);
         }
 
+        foreach(GameObject e in warningSigns)
+        {
+            e.SetActive(false);
+        }
+
+        dropIndices = new Queue<int>();
         Physics2D.IgnoreLayerCollision(13, 14); //ignore collisions with the boundaries.
     }
 
@@ -98,7 +105,13 @@ public class BoulderManager : MonoBehaviour
     void WarnForBoulder()
     {
         Debug.Log("Warning!");
-        dropIndex = UnityEngine.Random.Range(0, 18);
+        int dropIndex = UnityEngine.Random.Range(0, 18);
+
+        warningSigns[dropIndex].SetActive(true);
+
+        dropIndices.Enqueue(dropIndex);
+
+
     }
 
     void DropBoulder()
@@ -107,7 +120,9 @@ public class BoulderManager : MonoBehaviour
         //either line of boulders or shooting star
         GameObject boulder = RequestRandomBoulder();
         boulder.SetActive(true);
-        boulder.transform.position = spawnPoints[dropIndex].position + new Vector3(0, 0, -3);
+        int drop = dropIndices.Dequeue();
+        boulder.transform.position = spawnPoints[drop].position + new Vector3(0, 0, -3);
+        warningSigns[drop].SetActive(false);
     }
 
     void CheckForUpdates()
