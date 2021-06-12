@@ -16,20 +16,33 @@ public class CollisionLayerSwitch : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            isOnLayerA = true;
+            isOnLayerA = !isOnLayerA;
+            SwitchLayers();
+        }
+    }
+
+    private void SwitchLayers()
+    {
+        if (isOnLayerA)
+        {
+            SwitchToLayerA();
+        }
+        else
+        {
+            SwitchToLayerB();
         }
     }
 
     private void SwitchToLayerA()
     {
-        Physics.IgnoreLayerCollision(ropeColliderSetB, ropeLayer, false);
-        Physics.IgnoreLayerCollision(ropeColliderSetA, ropeLayer, true);
+        Physics2D.IgnoreLayerCollision(ropeColliderSetB, ropeLayer, false);
+        Physics2D.IgnoreLayerCollision(ropeColliderSetA, ropeLayer, true);
     }
 
     private void SwitchToLayerB()
     {
-        Physics.IgnoreLayerCollision(ropeColliderSetA, ropeLayer, false);
-        Physics.IgnoreLayerCollision(ropeColliderSetB, ropeLayer, true);
+        Physics2D.IgnoreLayerCollision(ropeColliderSetA, ropeLayer, false);
+        Physics2D.IgnoreLayerCollision(ropeColliderSetB, ropeLayer, true);
     }
 }
 

@@ -21,6 +21,7 @@ public class RopeSpawner : MonoBehaviour
         for (int i = 0; i < jointCount; i++) 
         {
             GameObject newLink = Instantiate(ropeLink, ropeParent.transform);
+            //newLink.layer = 1 << 8;
 
 
             newLink.transform.position = (pointA.position + (distanceBetweenSpawnPoints / jointCount) * i); 
