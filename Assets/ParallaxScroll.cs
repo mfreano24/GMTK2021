@@ -69,7 +69,6 @@ public class ParallaxScroll : MonoBehaviour
     private void OnDrawGizmos()
     {
         Vector3 previewBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
-        Debug.Log(previewBounds);
         Gizmos.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         Gizmos.DrawCube(new Vector3(transform.position.x, 0, transform.position.z), new Vector2(width, previewBounds.z));
     }
