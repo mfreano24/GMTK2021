@@ -8,13 +8,16 @@ public class DeathTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //TODO: only trigger death if
-            if(collision.transform.position.y >
-                collision.GetComponent<PlayerMovement>().otherPlayer.transform.position.y)
+            PlayerMovement pm = collision.GetComponent<PlayerMovement>();
+            //TODO: only trigger death if the player that just touched the trigger is above the other player.
+            if (collision.transform.position.y >
+                pm.otherPlayer.transform.position.y)
             {
-                
+                pm.TempDisableInput(100f, true);
+
+                GameManager.Instance.PlayerDeath();
             }
-            GameManager.Instance.PlayerDeath();
+            
         }
         else if (collision.CompareTag("Boulder"))
         {

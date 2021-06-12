@@ -130,6 +130,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
+      propertyPath: pointBenchmarks.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
       propertyPath: boulders.Array.data[0]
       value: 
       objectReference: {fileID: 822530297}
@@ -218,6 +228,126 @@ PrefabInstance:
       propertyPath: boulders.Array.data[17]
       value: 
       objectReference: {fileID: 591901005}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[1]
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[2]
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[3]
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[4]
+      value: 30000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[5]
+      value: 70000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[6]
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[7]
+      value: 500000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[8]
+      value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[9]
+      value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[0]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[10]
+      value: 100000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[11]
+      value: 380000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[0]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[1]
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[2]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[3]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[4]
+      value: 1250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[5]
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[6]
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[7]
+      value: 7500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[8]
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[9]
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[10]
+      value: 25000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[11]
+      value: 50000
+      objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104130, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: m_Name
@@ -636,13 +766,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0b0d043efa6ac4cb3cbc0571863cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 0
   scrollSpeed: 0.02
   scrollAcceleration: 0
   sampleTile: {fileID: 0}
-  instantiatedTiles:
-  - {fileID: 314404086}
-  - {fileID: 1274410227}
-  - {fileID: 582008274}
 --- !u!1 &187322772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,13 +2820,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0b0d043efa6ac4cb3cbc0571863cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 0
   scrollSpeed: 0.02
   scrollAcceleration: 0
   sampleTile: {fileID: 0}
-  instantiatedTiles:
-  - {fileID: 1390147679}
-  - {fileID: 461885126}
-  - {fileID: 1662821566}
 --- !u!1 &1506516794
 GameObject:
   m_ObjectHideFlags: 0

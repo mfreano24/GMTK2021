@@ -35,6 +35,7 @@ public class BoulderManager : MonoBehaviour
     //want to store the current point benchmarks so that we can decrease the timers
     [Header("Point Benchmarks")]
     public int[] pointBenchmarks;
+    public float[] climbRates;
     int currIndex = 0;
     bool atMaxDifficulty = false;
 
@@ -85,7 +86,11 @@ public class BoulderManager : MonoBehaviour
             WarnForBoulder();
             yield return new WaitForSeconds(warningTime);
             DropBoulder();
-            CheckForUpdates();
+            if (!atMaxDifficulty)
+            {
+                CheckForUpdates();
+            }
+            
         }
         
     }
@@ -103,8 +108,6 @@ public class BoulderManager : MonoBehaviour
         GameObject boulder = RequestRandomBoulder();
         boulder.SetActive(true);
         boulder.transform.position = spawnPoints[dropIndex].position + new Vector3(0, 0, -3);
-
-
     }
 
     void CheckForUpdates()
@@ -112,9 +115,16 @@ public class BoulderManager : MonoBehaviour
         if(GameManager.Instance.distanceClimbed >= pointBenchmarks[currIndex])
         {
             currIndex++;
+            Debug.Log("At index " + currIndex + " now. Climb rate is now " + climbRates[currIndex]);
+            GameManager.Instance.climbRate = climbRates[currIndex];
             secondsBetweenBoulders -= 0.25f;
             warningTime -= 0.25f;
             specialEventChance += 5.0f;
+
+            if(currIndex == 11)
+            {
+                atMaxDifficulty = true;
+            }
         }
     }
 

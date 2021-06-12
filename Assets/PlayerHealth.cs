@@ -29,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
                 if (healthRemaining == 0)
                 {
                     thisMovement.TempDisableInput(100f, true);
+                    thisMovement.ForceDrop(true);
                     Debug.Log("you died");
                     GameManager.Instance.PlayerDeath();
                 }

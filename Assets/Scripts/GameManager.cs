@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         if (gamePlaying)
         {
-            distanceClimbed += 100.0f * Time.deltaTime;
+            distanceClimbed += climbRate * Time.deltaTime;
 
             if(distanceClimbed >= DIST_EARTH_MOON)
             {

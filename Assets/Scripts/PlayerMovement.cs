@@ -168,6 +168,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void ForceDrop(bool disableOther)
+    {
+        Detach();
+        if (disableOther)
+        {
+            otherPlayer.ForceDrop(false);
+        }
+    }
+
     IEnumerator DisableInput(float time)
     {
         inputEnabled = false;
