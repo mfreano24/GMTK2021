@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
                 gameOver = true;
             }
 
-            distanceText.text = Mathf.FloorToInt(DIST_EARTH_MOON - distanceClimbed).ToString();
+            distanceText.text = Mathf.FloorToInt(DIST_EARTH_MOON - distanceClimbed).ToString() + "m";
         }
     }
 
