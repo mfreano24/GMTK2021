@@ -9,7 +9,7 @@ public class RopeVisual : MonoBehaviour
     public Gradient ropeTensionGradient;
     LineRenderer ropeLine;
 
-    Vector3 basePos = new Vector3(0,0,1);
+    Vector3 basePos = new Vector3(0,0,-1);
     PlayerMovement playerAScript;
     PlayerMovement playerBScript;
 

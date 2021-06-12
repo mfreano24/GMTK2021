@@ -65,7 +65,6 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Invincibility(float time)
     {
-        //TODO: need to add a flash effect to signify IFrames when hit.
         isInvincible = true;
         yield return new WaitForSeconds(time);
         isInvincible = false;
