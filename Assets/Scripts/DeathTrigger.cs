@@ -8,7 +8,12 @@ public class DeathTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //TODO: only trigger this when both players fall
+            //TODO: only trigger death if
+            if(collision.transform.position.y >
+                collision.GetComponent<PlayerMovement>().otherPlayer.transform.position.y)
+            {
+                
+            }
             GameManager.Instance.PlayerDeath();
         }
         else if (collision.CompareTag("Boulder"))

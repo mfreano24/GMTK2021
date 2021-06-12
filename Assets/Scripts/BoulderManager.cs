@@ -43,6 +43,8 @@ public class BoulderManager : MonoBehaviour
 
     int dropIndex;
 
+    Coroutine boulderCoroutine;
+
     private void Awake()
     {
         if (m_instance != null)
@@ -63,12 +65,14 @@ public class BoulderManager : MonoBehaviour
     }
 
 
-    private void Update()
+    public void StartBoulders()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            StartCoroutine(BoulderSpawner());
-        }
+        boulderCoroutine = StartCoroutine(BoulderSpawner());
+    }
+
+    public void StopBoulders()
+    {
+        StopCoroutine(boulderCoroutine);
     }
 
 
