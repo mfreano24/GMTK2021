@@ -86,6 +86,8 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = speed * moveDirection;
 
 
+                //Uncomment this out to prevent players from flinging themselves off cliffs
+
                 //if (!validClimbSpotFinder.CheckPlayerPosition(rb.velocity * Time.fixedDeltaTime))
                 //{
                 //    rb.velocity = rb.velocity * Vector2.up;
