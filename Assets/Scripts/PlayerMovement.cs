@@ -86,10 +86,10 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = speed * moveDirection;
 
 
-                if (!validClimbSpotFinder.CheckPlayerPosition(rb.velocity * Time.fixedDeltaTime))
-                {
-                    rb.velocity = rb.velocity * Vector2.up;
-                }
+                //if (!validClimbSpotFinder.CheckPlayerPosition(rb.velocity * Time.fixedDeltaTime))
+                //{
+                //    rb.velocity = rb.velocity * Vector2.up;
+                //}
             }
 
         }
