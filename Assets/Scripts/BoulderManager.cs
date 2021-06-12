@@ -72,6 +72,14 @@ public class BoulderManager : MonoBehaviour
         Physics2D.IgnoreLayerCollision(13, 14); //ignore collisions with the boundaries.
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            StartCoroutine(RowOfBouldersEvent());
+        }
+    }
+
 
     public void StartBoulders()
     {
@@ -90,13 +98,24 @@ public class BoulderManager : MonoBehaviour
         {
             Debug.Log("Waiting for the next boulder...");
             yield return new WaitForSeconds(secondsBetweenBoulders);
-            WarnForBoulder();
-            yield return new WaitForSeconds(warningTime);
-            DropBoulder();
-            if (!atMaxDifficulty)
+            //this is where we can roll a random int
+            int rollHundred = UnityEngine.Random.Range(1, 101);
+            if(rollHundred <= specialEventChance)
             {
-                CheckForUpdates();
+                //doing a special event
+                StartCoroutine(RowOfBouldersEvent());
             }
+            else
+            {
+                WarnForBoulder();
+                yield return new WaitForSeconds(warningTime);
+                DropBoulder();
+                if (!atMaxDifficulty)
+                {
+                    CheckForUpdates();
+                }
+            }
+            
             
         }
         
@@ -146,7 +165,8 @@ public class BoulderManager : MonoBehaviour
 
     GameObject RequestRandomBoulder()
     {
-        int ind = UnityEngine.Random.Range(0, 18);
+        int ind = UnityEngine.Random.Range(0, freeObjects.Count);
+        Debug.Log("ind of random boulder = " + ind);
         GameObject ret = freeObjects[ind];
         freeObjects.RemoveAt(ind);
         inUseObjects.Add(ret);
@@ -158,6 +178,29 @@ public class BoulderManager : MonoBehaviour
         freeObjects.Add(boulder);
         inUseObjects.Remove(boulder);
         boulder.SetActive(false);
+    }
+
+
+    IEnumerator RowOfBouldersEvent()
+    {
+        int dropIndex = UnityEngine.Random.Range(0, 18);
+        for(int i = 0; i < 5; i++)
+        {
+            warningSigns[(dropIndex + i)%18].SetActive(true);
+            dropIndices.Enqueue((dropIndex + i) % 18);
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(3.5f); //always do 3.5 seconds for this
+
+        for (int i = 0; i < 5; i++)
+        {
+            DropBoulder();
+            yield return new WaitForSeconds(0.1f);
+        }
+
+
+
     }
 
 
