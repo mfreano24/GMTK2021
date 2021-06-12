@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    [HideInInspector] public int distanceClimbed = 0;
     bool gameOver = false;
     private void Start()
     {
@@ -68,10 +69,5 @@ public class GameManager : MonoBehaviour
         Debug.Log("You fell (and died)!");
     }
 
-
-    IEnumerator BoulderSpawns()
-    {
-        yield return null;
-    }
     
 }

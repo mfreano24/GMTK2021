@@ -8,9 +8,13 @@ public class DeathTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            
-            //TODO: Call to GameManager here to handle deth
+            //TODO: Call to GameManager here to handle death
             GameManager.Instance.PlayerDeath();
+        }
+        else if (collision.CompareTag("Boulder"))
+        {
+            Debug.Log("Got the boulder!");
+            BoulderManager.Instance.ReturnBoulder(collision.gameObject);
         }
     }
 
