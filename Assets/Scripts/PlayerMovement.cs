@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 1.75f;
     public bool isPlayer2;
     public PlayerMovement otherPlayer; //keep a reference to the other player
-    
+    public GameObject sweatParticle;
 
     [Header("Health/Stamina")]
     public float staminaDrainRate = 20.0f;
@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     ValidClimbSpotFinder validClimbSpotFinder;
 
     PlayerHealth thisPlayerHealth;
+
+    
 
 
     private void Start()
@@ -66,6 +68,15 @@ public class PlayerMovement : MonoBehaviour
             else if (stamina < 100.0f)
             {
                 stamina += 2.0f * staminaDrainRate * Time.deltaTime;
+            }
+
+            if(stamina <= 35.0f && !sweatParticle.activeSelf)
+            {
+                sweatParticle.SetActive(true);
+            }
+            else if(stamina > 35.0f && sweatParticle.activeSelf)
+            {
+                sweatParticle.SetActive(false);
             }
 
             if (stamina <= 0.0f)
