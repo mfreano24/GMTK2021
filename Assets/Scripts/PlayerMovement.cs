@@ -9,13 +9,14 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 1.75f;
     public bool isPlayer2;
     public PlayerMovement otherPlayer; //keep a reference to the other player
+    
 
     [Header("Health/Stamina")]
     public float staminaDrainRate = 20.0f;
     public Image staminaMeter;
 
 
-    Vector2 moveDirection;
+    
     Rigidbody2D rb;
     float xInput, yInput;
 
@@ -24,12 +25,16 @@ public class PlayerMovement : MonoBehaviour
     int health = 5;
 
     bool isDead = false; //used mostly for effects
+    bool inputEnabled = true;
 
 
     //stuff to be accessed by other scripts.
+    [HideInInspector] public Vector2 moveDirection = Vector2.zero;
     [HideInInspector] public bool isAttached; //is the player attached to the wall?
 
     ValidClimbSpotFinder validClimbSpotFinder;
+
+    PlayerHealth thisPlayerHealth;
 
 
     private void Start()
@@ -38,13 +43,19 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         isAttached = true;
         rb.gravityScale = 0.0f;
-
+        transform.eulerAngles = Vector3.zero;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        thisPlayerHealth = GetComponent<PlayerHealth>();
     }
 
 
     private void Update()
     {
-        GetThisPlayerInput();
+        if (inputEnabled)
+        {
+            GetThisPlayerInput();
+        }
+        
         if (isAttached)
         {
             if (!otherPlayer.isAttached && Vector2.Distance(transform.position, otherPlayer.transform.position) >= 3.45f)
@@ -77,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                moveDirection = Vector2.right * xInput + Vector2.up * yInput;
+                
                 rb.velocity = speed * moveDirection;
 
 
@@ -130,17 +141,38 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+        moveDirection = Vector2.right * xInput + Vector2.up * yInput;
     }
 
     private void Detach()
     {
+        rb.constraints = RigidbodyConstraints2D.None;
         isAttached = false;
         rb.gravityScale = 1.0f;
     }
 
     private void Reattach()
     {
+        transform.eulerAngles = Vector3.zero;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         isAttached = true;
         rb.gravityScale = 0.0f;
+    }
+
+    public void TempDisableInput(float time, bool disableOther)
+    {
+        StartCoroutine(DisableInput(time));
+        if (disableOther)
+        {
+            otherPlayer.TempDisableInput(time, false);
+        }
+    }
+
+    IEnumerator DisableInput(float time)
+    {
+        inputEnabled = false;
+        yield return new WaitForSeconds(time);
+        inputEnabled = true;
+        //thisPlayerHealth.TempInvincibility(2.5f);
     }
 }

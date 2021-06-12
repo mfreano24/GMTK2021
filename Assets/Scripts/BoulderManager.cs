@@ -98,7 +98,7 @@ public class BoulderManager : MonoBehaviour
         //either line of boulders or shooting star
         GameObject boulder = RequestRandomBoulder();
         boulder.SetActive(true);
-        boulder.transform.position = spawnPoints[dropIndex].position;
+        boulder.transform.position = spawnPoints[dropIndex].position + new Vector3(0, 0, -3);
 
 
     }
