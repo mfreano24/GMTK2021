@@ -11,7 +11,7 @@ public class ParallaxScroll : MonoBehaviour
     
     
     
-    private List<GameObject> instantiatedTiles;
+    private List<GameObject> instantiatedTiles = new List<GameObject>();
     private Camera mainCamera;
     private Vector2 screenBounds;
     private Vector2 sampleTileBounds;
@@ -22,7 +22,7 @@ public class ParallaxScroll : MonoBehaviour
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
         sampleTileBounds = sampleTile.GetComponent<BoxCollider2D>().size * sampleTile.transform.localScale;
 
-        FillSpace(sampleTileBounds,width);
+        FillSpace(sampleTileBounds, width);
 
         //for (int i = 0; i < screenBounds.y / sampleTileBounds.y; i++)
         //{
@@ -32,7 +32,7 @@ public class ParallaxScroll : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         foreach (GameObject tile in instantiatedTiles)
         {
@@ -55,12 +55,13 @@ public class ParallaxScroll : MonoBehaviour
         for (int i = 0; i <= verticalTiles + 1; i++)
         {
             instantiatedTiles.Add(new GameObject("Tile Row"));
+            instantiatedTiles[i].transform.parent = this.transform;
             instantiatedTiles[i].transform.localPosition = transform.up * (-screenBounds.y + (tileDimensions.y * i) + (tileDimensions.y / 2));
 
             for (int j = 0; j < horizontalTiles; j++)
             {
                     GameObject funkyFreshTile = Instantiate(sampleTile, instantiatedTiles[i].transform);
-                    funkyFreshTile.transform.localPosition = Vector3.right * ((-screenBounds.x + tileDimensions.x / 2) + (tileDimensions.x * j));
+                    funkyFreshTile.transform.localPosition = Vector3.right * (((-width/2) + tileDimensions.x / 2) + (tileDimensions.x * j));
             }
         }
     }
