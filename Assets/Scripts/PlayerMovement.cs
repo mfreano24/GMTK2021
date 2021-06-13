@@ -40,11 +40,6 @@ public class PlayerMovement : MonoBehaviour
 
     PlayerHealth thisPlayerHealth;
 
-   
-
-    
-
-
     private void Start()
     {
         validClimbSpotFinder = GetComponent<ValidClimbSpotFinder>();

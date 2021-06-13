@@ -6,18 +6,25 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject creditsPanel;
+    public GameObject tutorialPanel;
     private void Start()
     {
         creditsPanel.SetActive(false);
+        tutorialPanel.SetActive(false);
     }
     public void SwitchToMainScene()
     {
         SceneManager.LoadScene("MainGameScene");
     }
 
-    public void SwitchToTutScene()
+    public void OpenTutPanel()
     {
-        SceneManager.LoadScene("TutorialScene");
+        tutorialPanel.SetActive(true);
+    }
+
+    public void CloseTutPanel()
+    {
+        tutorialPanel.SetActive(false);
     }
 
     public void OpenCreditsPanel()

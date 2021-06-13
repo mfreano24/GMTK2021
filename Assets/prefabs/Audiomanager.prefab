@@ -92,5 +92,29 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  musics: []
+  musics:
+  - name: Gameplay1
+    clip: {fileID: 8300000, guid: 9c0ccd21092e48f43a209d50aa83155a, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Gameplay2
+    clip: {fileID: 8300000, guid: c4605adcfe24eff4da4caa5460c98206, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: fb17716a9f5e5c24db1185402ccdbc2b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: 5fed56e6d0e49ed458b3e3f6048eb72d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   startingMusic: 
