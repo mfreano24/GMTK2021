@@ -15,11 +15,20 @@ public class RopeVisual : MonoBehaviour
 
     float distance;
 
+    AudioSource ropeStretch;
+    private void Awake()
+    {
+        ropeStretch = GetComponent<AudioSource>();
+        ropeStretch.volume = 0.0f;
+        ropeStretch.Play();
+    }
+
     private void Start()
     {
         ropeLine = GetComponent<LineRenderer>();
         playerAScript = playerA.GetComponent<PlayerMovement>();
         playerBScript = playerB.GetComponent<PlayerMovement>();
+        
     }
 
     private void Update()
@@ -32,10 +41,20 @@ public class RopeVisual : MonoBehaviour
         if(!playerAScript.isAttached || !playerBScript.isAttached)
         {
             ropeLine.material.color = ropeTensionGradient.Evaluate(distance / 3.5f);
+            if (distance >= 3.45f)
+            {
+                ropeStretch.volume = 0.1f;
+            }
+            else
+            {
+                ropeStretch.volume = 0.0f;
+            }
+            
         }
         else
         {
             ropeLine.material.color = ropeTensionGradient.Evaluate(0.0f);
+            ropeStretch.volume = 0.0f;
         }
     }
 }
