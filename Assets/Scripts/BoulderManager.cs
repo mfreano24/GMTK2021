@@ -155,7 +155,22 @@ public class BoulderManager : MonoBehaviour
             warningTime -= 0.25f;
             specialEventChance += 5.0f;
 
-            if(currIndex == 11)
+            if(currIndex == 1)
+            {
+                AudioManager.Instance.PlayMusic("Gameplay2", true);
+            }
+
+            else if (currIndex == 4)
+            {
+                AudioManager.Instance.PlayMusic("Gameplay3", true);
+            }
+
+            else if (currIndex == 7)
+            {
+                AudioManager.Instance.PlayMusic("Gameplay4", true);
+            }
+
+            if (currIndex == 11)
             {
                 atMaxDifficulty = true;
             }

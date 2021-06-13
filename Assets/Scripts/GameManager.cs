@@ -89,13 +89,17 @@ public class GameManager : MonoBehaviour
     IEnumerator GameStart()
     {
         //ready, go text or something
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
+        AudioManager.Instance.PlaySound("GameStart");
+        yield return new WaitForSeconds(0.75f);
         CanvasFlash.Instance.Flash();
         ReadyVisual.SetActive(false);
         ClimbVisual.SetActive(true);
         yield return new WaitForSeconds(1.0f);
+        AudioManager.Instance.PlayMusic("Gameplay1", false);
         ClimbVisual.GetComponent<Animator>().SetTrigger("SlideOut");
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
+        
 
     }
 
@@ -135,6 +139,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDeath()
     {
+        AudioManager.Instance.PlaySound("Death");
         Debug.Log("You fell (and died)!");
         gameOver = true;
     }

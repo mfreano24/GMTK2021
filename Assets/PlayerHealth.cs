@@ -24,6 +24,8 @@ public class PlayerHealth : MonoBehaviour
             if (!isInvincible)
             {
                 Debug.Log("Smacked");
+                int hitsound = UnityEngine.Random.Range(1, 4);
+                AudioManager.Instance.PlaySound("BoulderHit" + hitsound.ToString());
                 thisAnimator.TakeDamageTrigger();
                 hearts[--healthRemaining].SetActive(false);
                 if (healthRemaining == 0)

@@ -185,6 +185,7 @@ public class PlayerMovement : MonoBehaviour
         isAttached = false;
         rb.gravityScale = 1.0f;
         dirtParticle.SetActive(false);
+        AudioManager.Instance.PlaySound("Detach");
     }
 
     private void Reattach()
@@ -198,6 +199,7 @@ public class PlayerMovement : MonoBehaviour
             dirtParticle.SetActive(true);
             smokePuff.Stop();
             smokePuff.Play();
+            AudioManager.Instance.PlaySound("Attach");
         }
     }
 

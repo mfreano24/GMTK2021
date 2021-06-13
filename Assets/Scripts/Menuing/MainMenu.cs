@@ -36,4 +36,9 @@ public class MainMenu : MonoBehaviour
     {
         creditsPanel.SetActive(false);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
