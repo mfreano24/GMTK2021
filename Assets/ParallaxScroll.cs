@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ParallaxScroll : MonoBehaviour
@@ -8,9 +9,9 @@ public class ParallaxScroll : MonoBehaviour
     public float scrollSpeed;
     public float scrollAcceleration;
     public GameObject sampleTile;
-    
-    
-    
+    public Sprite edgeSprite;
+
+
     private List<GameObject> instantiatedTiles = new List<GameObject>();
     private Camera mainCamera;
     private Vector2 screenBounds;
@@ -34,14 +35,14 @@ public class ParallaxScroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scrollSpeed = Mathf.Sqrt( (GameManager.Instance.climbRate / (200f * 4f)))/200f;
+        scrollSpeed = Mathf.Sqrt((GameManager.Instance.climbRate / (200f * 4f))) / 200f;
         foreach (GameObject tile in instantiatedTiles)
         {
             tile.transform.position -= Vector3.up * scrollSpeed;
             if (tile.transform.localPosition.y < -(screenBounds.y + (sampleTileBounds.y / 2)))
             {
                 //tile.transform.localPosition = instantiatedTiles[instantiatedTiles.Count - 1].transform.position + (Vector3.up * sampleTileBounds.y);
-                tile.transform.localPosition = tile.transform.localPosition = new Vector3(tile.transform.localPosition.x, (-screenBounds.y) + (sampleTileBounds.y * (instantiatedTiles.Count - 1) + (sampleTileBounds.y/2f)), tile.transform.localPosition.z);
+                tile.transform.localPosition = tile.transform.localPosition = new Vector3(tile.transform.localPosition.x, (-screenBounds.y) + (sampleTileBounds.y * (instantiatedTiles.Count - 1) + (sampleTileBounds.y / 2f)), tile.transform.localPosition.z);
                 tile.transform.position -= Vector3.up * scrollSpeed;
 
             }
@@ -61,10 +62,22 @@ public class ParallaxScroll : MonoBehaviour
             instantiatedTiles[i].transform.parent = this.transform;
             instantiatedTiles[i].transform.localPosition = transform.up * (-screenBounds.y + (tileDimensions.y * i) + (tileDimensions.y / 2));
 
-            for (int j = 0; j < horizontalTiles; j++)
+            for (int j = 0; j < horizontalTiles + 2; j++)
             {
-                    GameObject funkyFreshTile = Instantiate(sampleTile, instantiatedTiles[i].transform);
-                    funkyFreshTile.transform.localPosition = Vector3.right * (((-width/2) + tileDimensions.x / 2) + (tileDimensions.x * j));
+                GameObject funkyFreshTile = Instantiate(sampleTile, instantiatedTiles[i].transform);
+                funkyFreshTile.transform.localPosition = Vector3.right * (((-width / 2) + tileDimensions.x / 2) + (tileDimensions.x * j));
+                if (j == 0) 
+                {
+                    funkyFreshTile.GetComponent<SpriteRenderer>().sprite = edgeSprite;
+                    funkyFreshTile.GetComponent<SpriteRenderer>().flipX = true;
+                    Destroy(funkyFreshTile.GetComponent<BoxCollider2D>());
+                }
+
+                if (j == horizontalTiles + 1) 
+                {
+                    funkyFreshTile.GetComponent<SpriteRenderer>().sprite = edgeSprite;
+                    Destroy(funkyFreshTile.GetComponent<BoxCollider2D>());
+                }
 
             }
         }
@@ -76,10 +89,10 @@ public class ParallaxScroll : MonoBehaviour
         Gizmos.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         Gizmos.DrawCube(new Vector3(transform.position.x, 0, transform.position.z), new Vector2(width, previewBounds.z));
     }
-    private void SyncLines() 
+    private void SyncLines()
     {
         int lowestRow = 0;
-        for (int i = 1; i < instantiatedTiles.Count; i++) 
+        for (int i = 1; i < instantiatedTiles.Count; i++)
         {
             if (instantiatedTiles[i].transform.localPosition.y < instantiatedTiles[lowestRow].transform.localPosition.y)
             {
@@ -87,7 +100,7 @@ public class ParallaxScroll : MonoBehaviour
             }
         }
 
-        for (int i = 1; i < instantiatedTiles.Count; i++) 
+        for (int i = 1; i < instantiatedTiles.Count; i++)
         {
 
             int currentTile = (lowestRow + i) % instantiatedTiles.Count;
