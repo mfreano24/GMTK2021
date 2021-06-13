@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
     public Text finalDistanceText;
     public Text newBestText;
     public GameObject gameOverScreen;
+
+    public GameObject ReadyVisual;
+    public GameObject ClimbVisual;
     
 
     [HideInInspector] public float distanceClimbed = 0;
@@ -86,7 +89,14 @@ public class GameManager : MonoBehaviour
     IEnumerator GameStart()
     {
         //ready, go text or something
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(2.0f);
+        CanvasFlash.Instance.Flash();
+        ReadyVisual.SetActive(false);
+        ClimbVisual.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        ClimbVisual.GetComponent<Animator>().SetTrigger("SlideOut");
+        yield return new WaitForSeconds(1.0f);
+
     }
 
     IEnumerator GameDuring()
