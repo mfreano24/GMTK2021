@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isPlayer2;
     public PlayerMovement otherPlayer; //keep a reference to the other player
     public GameObject sweatParticle;
+    public GameObject dirtParticle;
+    public ParticleSystem smokePuff;
 
     [Header("Health/Stamina")]
     public float passiveStaminaDrainRate = 1.8f;
@@ -37,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     PlayerHealth thisPlayerHealth;
 
-    A
+   
 
     
 
@@ -167,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.None;
         isAttached = false;
         rb.gravityScale = 1.0f;
+        dirtParticle.SetActive(false);
     }
 
     private void Reattach()
@@ -177,6 +180,9 @@ public class PlayerMovement : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             isAttached = true;
             rb.gravityScale = 0.0f;
+            dirtParticle.SetActive(true);
+            smokePuff.Stop();
+            smokePuff.Play();
         }
     }
 

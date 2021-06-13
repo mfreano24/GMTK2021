@@ -13,13 +13,19 @@ public class PlayerAnimation : MonoBehaviour
     bool isAttached = true;
 
     bool isMoving = false;
+
+    float baseSpeed;
     private void Start()
     {
         anim = GetComponent<Animator>();
+        baseSpeed = Mathf.Sqrt((200f / 200f)) / 200f;
     }
 
     private void Update()
     {
+
+        float climbSpeed = Mathf.Sqrt((GameManager.Instance.climbRate / 200f)) / 200f;
+        anim.SetFloat("climbSpeed",climbSpeed/baseSpeed);
         if (isAttached && !playerMovement.isAttached)
         {
             //send trigger to switch to falling state
