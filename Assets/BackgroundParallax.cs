@@ -14,7 +14,7 @@ public class BackgroundParallax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float scrollSpeed = (Mathf.Sqrt((GameManager.Instance.climbRate / 200f)) / 200f) * scrollFactor;
+        float scrollSpeed = (Mathf.Sqrt((GameManager.Instance.climbRate / (200f * 4f))) / 200f) * scrollFactor;
         transform.localPosition -= Vector3.up * scrollSpeed;
     }
 }

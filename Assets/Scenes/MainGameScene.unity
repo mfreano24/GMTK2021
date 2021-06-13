@@ -241,122 +241,122 @@ PrefabInstance:
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: pointBenchmarks.Array.data[1]
-      value: 3000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: pointBenchmarks.Array.data[2]
-      value: 8000
+      value: 16000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: pointBenchmarks.Array.data[3]
-      value: 15000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
-        type: 3}
-      propertyPath: pointBenchmarks.Array.data[4]
       value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
+      propertyPath: pointBenchmarks.Array.data[4]
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
       propertyPath: pointBenchmarks.Array.data[5]
-      value: 70000
+      value: 140000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: pointBenchmarks.Array.data[6]
-      value: 200000
+      value: 400000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: pointBenchmarks.Array.data[7]
-      value: 500000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
-        type: 3}
-      propertyPath: pointBenchmarks.Array.data[8]
       value: 1000000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
+      propertyPath: pointBenchmarks.Array.data[8]
+      value: 50000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
       propertyPath: pointBenchmarks.Array.data[9]
-      value: 10000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
-        type: 3}
-      propertyPath: pointBenchmarks.Array.data[0]
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
-        type: 3}
-      propertyPath: pointBenchmarks.Array.data[10]
       value: 100000000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
+      propertyPath: pointBenchmarks.Array.data[0]
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: pointBenchmarks.Array.data[10]
+      value: 200000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
       propertyPath: pointBenchmarks.Array.data[11]
-      value: 380000000
+      value: 300000000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: climbRates.Array.data[0]
-      value: 200
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: climbRates.Array.data[1]
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
-        type: 3}
-      propertyPath: climbRates.Array.data[2]
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
-        type: 3}
-      propertyPath: climbRates.Array.data[3]
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
+      propertyPath: climbRates.Array.data[2]
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[3]
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
       propertyPath: climbRates.Array.data[4]
-      value: 1250
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: climbRates.Array.data[5]
-      value: 2500
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: climbRates.Array.data[6]
-      value: 7000
+      value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
       propertyPath: climbRates.Array.data[7]
-      value: 12000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
-        type: 3}
-      propertyPath: climbRates.Array.data[8]
-      value: 24000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
-        type: 3}
-      propertyPath: climbRates.Array.data[9]
-      value: 35000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
-        type: 3}
-      propertyPath: climbRates.Array.data[10]
       value: 50000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
+      propertyPath: climbRates.Array.data[8]
+      value: 96000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[9]
+      value: 140000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
+      propertyPath: climbRates.Array.data[10]
+      value: 240000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
+        type: 3}
       propertyPath: climbRates.Array.data[11]
-      value: 80000
+      value: 500000
       objectReference: {fileID: 0}
     - target: {fileID: 5364404873704104128, guid: 1f46d40e123ecdc4e849c71373faf433,
         type: 3}
@@ -2985,6 +2985,35 @@ MonoBehaviour:
   passiveStaminaDrainRate: 1.8
   staminaDrainRate: 20
   staminaMeter: {fileID: 787250025}
+  staminaGradient:
+    serializedVersion: 2
+    key0: {r: 0, g: 1, b: 0.17254902, a: 1}
+    key1: {r: 0.9647059, g: 0.7921569, b: 0.5137255, a: 1}
+    key2: {r: 0.43529412, g: 0.11372549, b: 0.105882354, a: 0}
+    key3: {r: 0.43529412, g: 0.11372549, b: 0.105882354, a: 0}
+    key4: {r: 0.43529412, g: 0.11372549, b: 0.105882354, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 23516
+    ctime1: 37779
+    ctime2: 53777
+    ctime3: 53777
+    ctime4: 53777
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
   moveDirection: {x: 0, y: 0}
   isAttached: 0
 --- !u!61 &990581279
@@ -3528,7 +3557,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8942518, y: 12.491283}
+  m_Size: {x: 0.8942518, y: 15}
   m_EdgeRadius: 0
 --- !u!1 &1260384188
 GameObject:
@@ -3648,7 +3677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1285738102
 Transform:
   m_ObjectHideFlags: 0
@@ -3800,7 +3829,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -3917,7 +3946,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.004271993, g: 0.9056604, b: 0.89673954, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4441,7 +4470,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.1
+      value: 0.2
       mode: 0
       spread: 0
       speed:
@@ -4990,7 +5019,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -4998,16 +5027,16 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.003921569, g: 0.9058824, b: 0.8980393, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
-        ctime1: 65535
+        ctime0: 49730
+        ctime1: 57632
         ctime2: 0
         ctime3: 0
         ctime4: 0
@@ -5015,16 +5044,16 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
-        atime3: 0
+        atime1: 57247
+        atime2: 65535
+        atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5765,12 +5794,12 @@ ParticleSystem:
         m_RotationOrder: 4
     inWorldSpace: 0
   InheritVelocityModule:
-    enabled: 0
+    enabled: 1
     m_Mode: 0
     m_Curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9040,7 +9069,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.8748245, y: 9.953334}
+  m_Size: {x: 4.8748245, y: 15}
   m_EdgeRadius: 0
 --- !u!1 &1525689377
 GameObject:
@@ -9809,7 +9838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1768995554
 Transform:
   m_ObjectHideFlags: 0
@@ -9818,7 +9847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768995553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.32, y: 0.91, z: -2}
+  m_LocalPosition: {x: -0, y: 0.91, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 990581277}
@@ -9961,7 +9990,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -10078,7 +10107,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.004271993, g: 0.9056604, b: 0.89673954, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10456,7 +10485,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 5
+    maxNumParticles: 20
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -10602,7 +10631,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.1
+      value: 0.2
       mode: 0
       spread: 0
       speed:
@@ -11151,7 +11180,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -11159,16 +11188,16 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.003921569, g: 0.9058824, b: 0.8980393, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
-        ctime1: 65535
+        ctime0: 49730
+        ctime1: 57632
         ctime2: 0
         ctime3: 0
         ctime4: 0
@@ -11176,16 +11205,16 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
-        atime3: 0
+        atime1: 57247
+        atime2: 65535
+        atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -11926,12 +11955,12 @@ ParticleSystem:
         m_RotationOrder: 4
     inWorldSpace: 0
   InheritVelocityModule:
-    enabled: 0
+    enabled: 1
     m_Mode: 0
     m_Curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -15037,6 +15066,35 @@ MonoBehaviour:
   passiveStaminaDrainRate: 1.8
   staminaDrainRate: 20
   staminaMeter: {fileID: 2031706829}
+  staminaGradient:
+    serializedVersion: 2
+    key0: {r: 0, g: 1, b: 0.17254902, a: 1}
+    key1: {r: 0.9647059, g: 0.7921569, b: 0.5137255, a: 1}
+    key2: {r: 0.43529412, g: 0.11372549, b: 0.105882354, a: 0}
+    key3: {r: 0.43529412, g: 0.11372549, b: 0.105882354, a: 0}
+    key4: {r: 0.43529412, g: 0.11372549, b: 0.105882354, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 23516
+    ctime1: 37779
+    ctime2: 53777
+    ctime3: 53777
+    ctime4: 53777
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
   moveDirection: {x: 0, y: 0}
   isAttached: 0
 --- !u!61 &1952651068

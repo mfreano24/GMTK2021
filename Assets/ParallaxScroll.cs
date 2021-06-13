@@ -34,7 +34,7 @@ public class ParallaxScroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scrollSpeed = Mathf.Sqrt( (GameManager.Instance.climbRate / 200f))/200f;
+        scrollSpeed = Mathf.Sqrt( (GameManager.Instance.climbRate / (200f * 4f)))/200f;
         foreach (GameObject tile in instantiatedTiles)
         {
             tile.transform.position -= Vector3.up * scrollSpeed;

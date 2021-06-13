@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic(startingMusic, false);
+        //PlayMusic(startingMusic, false);
     }
 
 

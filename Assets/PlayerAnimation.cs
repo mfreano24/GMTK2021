@@ -24,7 +24,7 @@ public class PlayerAnimation : MonoBehaviour
     private void Update()
     {
 
-        float climbSpeed = Mathf.Sqrt((GameManager.Instance.climbRate / 200f)) / 200f;
+        float climbSpeed = Mathf.Sqrt((GameManager.Instance.climbRate / (200f * 4f))) / 200f;
         anim.SetFloat("climbSpeed",climbSpeed/baseSpeed);
         if (isAttached && !playerMovement.isAttached)
         {

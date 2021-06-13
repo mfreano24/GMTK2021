@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public float passiveStaminaDrainRate = 1.8f;
     public float staminaDrainRate = 6.4f;
     public Image staminaMeter;
+    public Gradient staminaGradient;
 
 
     
@@ -75,13 +76,31 @@ public class PlayerMovement : MonoBehaviour
                 stamina -= passiveStaminaDrainRate * Time.deltaTime;
             }
 
-            if (stamina <= 35.0f && !sweatParticle.activeSelf)
+            if (stamina <= 15.0f /*&& !sweatParticle.activeSelf*/)
             {
-                sweatParticle.SetActive(true);
+                var emission = sweatParticle.GetComponent<ParticleSystem>().emission;
+                emission.rateOverTime = 9f;
             }
-            else if (stamina > 35.0f && sweatParticle.activeSelf)
+            else if (stamina < 35.0f /*&& sweatParticle.activeSelf*/)
             {
-                sweatParticle.SetActive(false);
+                var emission = sweatParticle.GetComponent<ParticleSystem>().emission;
+                emission.rateOverTime = 6f;
+            }
+            else if (stamina < 50.0f /*&& sweatParticle.activeSelf*/)
+            {
+                var emission = sweatParticle.GetComponent<ParticleSystem>().emission;
+                emission.rateOverTime = 3f;
+            }
+            else if (stamina < 65.0f /*&& sweatParticle.activeSelf*/)
+            {
+                var emission = sweatParticle.GetComponent<ParticleSystem>().emission;
+                emission.rateOverTime = 1f;
+            }
+
+            else if (stamina >= 65.0f /*&& sweatParticle.activeSelf*/)
+            {
+                var emission = sweatParticle.GetComponent<ParticleSystem>().emission;
+                emission.rateOverTime = 0f;
             }
 
             if (stamina <= 0.0f)
@@ -94,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
             stamina += 2.0f * staminaDrainRate * Time.deltaTime;
         }
         staminaMeter.fillAmount = stamina / 100.0f;
+        staminaMeter.color = staminaGradient.Evaluate((1f -(stamina / 100f)));
 
     }
 
