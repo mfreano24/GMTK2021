@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         //move the game over screen in (animate if time)
         gameOverScreen.SetActive(true);
+        gameOverScreen.GetComponent<Animator>().SetTrigger("GameEnded"); //move in
         finalDistanceText.text = distanceClimbed.ToString() + "m";
         if (distanceClimbed > PlayerPrefs.GetFloat("BestDistance", -100f))
         {
