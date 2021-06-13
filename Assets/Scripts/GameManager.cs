@@ -65,13 +65,13 @@ public class GameManager : MonoBehaviour
         {
             distanceClimbed += climbRate * Time.deltaTime;
 
-            if(distanceClimbed >= DIST_EARTH_MOON)
+            if (distanceClimbed >= DIST_EARTH_MOON)
             {
                 gameWon = true;
                 gameOver = true;
             }
 
-            distanceText.text = Mathf.FloorToInt(DIST_EARTH_MOON - distanceClimbed).ToString() + "m";
+            distanceText.text = string.Format("{0:n0}", DIST_EARTH_MOON - distanceClimbed) + "m";
         }
     }
 
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
         //move the game over screen in (animate if time)
         gameOverScreen.SetActive(true);
         gameOverScreen.GetComponent<Animator>().SetTrigger("GameEnded"); //move in
-        finalDistanceText.text = distanceClimbed.ToString() + "m";
+        finalDistanceText.text = string.Format("{0:n}", distanceClimbed) + "m";
         if (distanceClimbed > PlayerPrefs.GetFloat("BestDistance", -100f))
         {
             newBestText.text = "NEW PERSONAL BEST!";

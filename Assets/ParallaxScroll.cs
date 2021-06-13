@@ -34,6 +34,7 @@ public class ParallaxScroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scrollSpeed = Mathf.Sqrt( (GameManager.Instance.climbRate / 200f))/200f;
         foreach (GameObject tile in instantiatedTiles)
         {
             tile.transform.position -= Vector3.up * scrollSpeed;
@@ -42,9 +43,11 @@ public class ParallaxScroll : MonoBehaviour
                 //tile.transform.localPosition = instantiatedTiles[instantiatedTiles.Count - 1].transform.position + (Vector3.up * sampleTileBounds.y);
                 tile.transform.localPosition = tile.transform.localPosition = new Vector3(tile.transform.localPosition.x, (-screenBounds.y) + (sampleTileBounds.y * (instantiatedTiles.Count - 1) + (sampleTileBounds.y/2f)), tile.transform.localPosition.z);
                 tile.transform.position -= Vector3.up * scrollSpeed;
+
             }
             scrollSpeed += scrollAcceleration;
         }
+        SyncLines();
     }
 
 
@@ -62,6 +65,7 @@ public class ParallaxScroll : MonoBehaviour
             {
                     GameObject funkyFreshTile = Instantiate(sampleTile, instantiatedTiles[i].transform);
                     funkyFreshTile.transform.localPosition = Vector3.right * (((-width/2) + tileDimensions.x / 2) + (tileDimensions.x * j));
+
             }
         }
     }
@@ -71,5 +75,24 @@ public class ParallaxScroll : MonoBehaviour
         Vector3 previewBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
         Gizmos.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         Gizmos.DrawCube(new Vector3(transform.position.x, 0, transform.position.z), new Vector2(width, previewBounds.z));
+    }
+    private void SyncLines() 
+    {
+        int lowestRow = 0;
+        for (int i = 1; i < instantiatedTiles.Count; i++) 
+        {
+            if (instantiatedTiles[i].transform.localPosition.y < instantiatedTiles[lowestRow].transform.localPosition.y)
+            {
+                lowestRow = i;
+            }
+        }
+
+        for (int i = 1; i < instantiatedTiles.Count; i++) 
+        {
+
+            int currentTile = (lowestRow + i) % instantiatedTiles.Count;
+            int previousTile = (lowestRow + i - 1) % instantiatedTiles.Count;
+            instantiatedTiles[currentTile].transform.localPosition = Vector3.up * (instantiatedTiles[previousTile].transform.localPosition.y + sampleTileBounds.y);
+        }
     }
 }

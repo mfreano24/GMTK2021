@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject sweatParticle;
 
     [Header("Health/Stamina")]
-    public float staminaDrainRate = 20.0f;
+    public float passiveStaminaDrainRate = 1.8f;
+    public float staminaDrainRate = 6.4f;
     public Image staminaMeter;
 
 
@@ -57,24 +58,24 @@ public class PlayerMovement : MonoBehaviour
         {
             GetThisPlayerInput();
         }
-        
+
         if (isAttached)
         {
             if (!otherPlayer.isAttached && Vector2.Distance(transform.position, otherPlayer.transform.position) >= 3.45f)
             {
-                //drain our stamina
+                //drain our stamina at the exertive level
                 stamina -= staminaDrainRate * Time.deltaTime;
             }
-            else if (stamina < 100.0f)
+            else 
             {
-                stamina += 2.0f * staminaDrainRate * Time.deltaTime;
+                stamina -= passiveStaminaDrainRate * Time.deltaTime;
             }
 
-            if(stamina <= 35.0f && !sweatParticle.activeSelf)
+            if (stamina <= 35.0f && !sweatParticle.activeSelf)
             {
                 sweatParticle.SetActive(true);
             }
-            else if(stamina > 35.0f && sweatParticle.activeSelf)
+            else if (stamina > 35.0f && sweatParticle.activeSelf)
             {
                 sweatParticle.SetActive(false);
             }
@@ -83,6 +84,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 Detach();
             }
+        }
+        else if (stamina < 100.0f)
+        {
+            stamina += 2.0f * staminaDrainRate * Time.deltaTime;
         }
         staminaMeter.fillAmount = stamina / 100.0f;
 
@@ -164,10 +169,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Reattach()
     {
-        transform.eulerAngles = Vector3.zero;
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        isAttached = true;
-        rb.gravityScale = 0.0f;
+        if (validClimbSpotFinder.CheckPlayerPosition())
+        {
+            transform.eulerAngles = Vector3.zero;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            isAttached = true;
+            rb.gravityScale = 0.0f;
+        }
     }
 
     public void TempDisableInput(float time, bool disableOther)
