@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour
 
     public float climbRate = 100.0f;
     public Text distanceText;
+
+    public Text finalDistanceText;
+    public Text newBestText;
+    public GameObject gameOverScreen;
+    
+
     [HideInInspector] public float distanceClimbed = 0;
     bool gameOver = false;
     bool gamePlaying = false;
@@ -45,6 +51,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //default game logic, not the tutorial level probably
+        gameOverScreen.SetActive(false);
         StartCoroutine(GameLoop());
 
     }
@@ -96,16 +103,22 @@ public class GameManager : MonoBehaviour
     {
         //TODO: you lose screen
         //maybe an actual screen with a "Restart" and "Menu" button?
-
-        if (gameWon)
+        yield return new WaitForSeconds(2.0f);
+        //move the game over screen in (animate if time)
+        gameOverScreen.SetActive(true);
+        finalDistanceText.text = distanceClimbed.ToString() + "m";
+        if (distanceClimbed > PlayerPrefs.GetFloat("BestDistance", -100f))
         {
-            Debug.Log("You made it back to the stars!");
+            newBestText.text = "NEW PERSONAL BEST!";
+            PlayerPrefs.SetFloat("BestDistance", distanceClimbed);
         }
         else
         {
-
+            newBestText.text = "BEST: " + PlayerPrefs.GetFloat("BestDistance", -100f) + "m";
         }
-        yield return new WaitForSeconds(5.0f);
+
+       
+        
     }
 
 

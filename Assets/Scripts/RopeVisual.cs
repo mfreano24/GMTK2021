@@ -31,13 +31,11 @@ public class RopeVisual : MonoBehaviour
         distance = Vector2.Distance(playerA.position, playerB.position);
         if(!playerAScript.isAttached || !playerBScript.isAttached)
         {
-            ropeLine.startColor = ropeTensionGradient.Evaluate(distance / 3.5f);
-            ropeLine.endColor = ropeTensionGradient.Evaluate(distance / 3.5f);
+            ropeLine.material.color = ropeTensionGradient.Evaluate(distance / 3.5f);
         }
         else
         {
-            ropeLine.startColor = ropeTensionGradient.Evaluate(0.0f);
-            ropeLine.endColor = ropeTensionGradient.Evaluate(0.0f);
+            ropeLine.material.color = ropeTensionGradient.Evaluate(0.0f);
         }
     }
 }
