@@ -122,6 +122,11 @@ public class GameManager : MonoBehaviour
         gameOverScreen.SetActive(true);
         gameOverScreen.GetComponent<Animator>().SetTrigger("GameEnded"); //move in
         finalDistanceText.text = string.Format("{0:n}", distanceClimbed) + "m";
+        if (gameWon)
+        {
+            newBestText.text = "You reached the cosmos!";
+            PlayerPrefs.SetFloat("BestDistance", distanceClimbed);
+        }
         if (distanceClimbed > PlayerPrefs.GetFloat("BestDistance", -100f))
         {
             newBestText.text = "NEW PERSONAL BEST!";
