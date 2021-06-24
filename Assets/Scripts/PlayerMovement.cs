@@ -39,10 +39,11 @@ public class PlayerMovement : MonoBehaviour
     ValidClimbSpotFinder validClimbSpotFinder;
 
     PlayerHealth thisPlayerHealth;
-
+    DistanceIndicator distanceIndicator;
     private void Start()
     {
         validClimbSpotFinder = GetComponent<ValidClimbSpotFinder>();
+        distanceIndicator = GetComponent<DistanceIndicator>();
         rb = GetComponent<Rigidbody2D>();
         isAttached = true;
         rb.gravityScale = 0.0f;
@@ -105,7 +106,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (stamina < 100.0f)
         {
-            stamina += 2.0f * staminaDrainRate * Time.deltaTime;
+            stamina += 1.2f * staminaDrainRate * Time.deltaTime;
+        }
+        if (distanceIndicator.dangerLevel > 0.69f) 
+        {
+            stamina -= staminaDrainRate * Time.deltaTime * distanceIndicator.dangerLevel * 0.8f;
         }
         staminaMeter.fillAmount = stamina / 100.0f;
         staminaMeter.color = staminaGradient.Evaluate((1f -(stamina / 100f)));
